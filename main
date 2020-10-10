@@ -1,0 +1,77 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        List Lista = new ArrayList(10);
+
+        double R1,R2,R3;
+
+        double s,r,m;
+
+
+        for (int i = 0; i <10 ; i++) {
+            double valor =1;
+            System.out.println("Ingresa los valores a la lista");
+            valor = leer.nextDouble();
+            Lista.add(valor);
+        }
+
+        System.out.println("**************************** Numeros **************************************");
+
+        System.out.println("Ingresa el primer numero");
+        R1= leer.nextDouble();
+
+        System.out.println("Ingresa el numero 2");
+        R2=leer.nextDouble();
+
+        System.out.println("Ingresa el numero 3");
+        R3=leer.nextDouble();
+
+        int num =0;
+        do {
+            System.out.println("¿Que operacion desea realizar?");
+            System.out.println("[1] Suma");
+            System.out.println("[2] Resta");
+            System.out.println("[3] Multiplicasion");
+            System.out.println("[4] Salir");
+            System.out.println("Ingrese una opcion del 1 al 4");
+            num = leer.nextInt();
+
+            switch (num){
+                case 1:
+                    s = (double) Lista.get((int) R1) + (double) Lista.get((int) R2)+ (double) Lista.get((int) R3);
+                    System.out.println("El numero: "+Lista.get((int) R1));
+                    System.out.println("El numero: "+Lista.get((int) R2));
+                    System.out.println("El numero: "+Lista.get((int) R3));
+                    System.out.println("El resultado es de la suma es:  "+s);
+                    break;
+                case 2:
+                    s = (double) Lista.get((int) R1) - (double) Lista.get((int) R2)- (double) Lista.get((int) R3);
+                    System.out.println("El numero: "+Lista.get((int) R1));
+                    System.out.println("El numero: "+Lista.get((int) R2));
+                    System.out.println("El numero: "+Lista.get((int) R3));
+                    System.out.println("El resultado de la resta es:  "+s);
+                    break;
+                case 3:
+                    s = (double) Lista.get((int) R1) * (double) Lista.get((int) R2)* (double) Lista.get((int) R3);
+                    System.out.println("El numero: "+Lista.get((int) R1));
+                    System.out.println("El numero: "+Lista.get((int) R2));
+                    System.out.println("El numero: "+Lista.get((int) R3));
+                    System.out.println("El resultado de la multiplicasion es: "+s);
+                    break;
+                case 4:
+                    System.out.println("Saliendo");
+                    break;
+                default:
+                    System.out.println("Ingresa un numero valido");
+            }
+
+        }while (num!=4);
+
+        System.out.println("Bye");
+
+    }
+}
